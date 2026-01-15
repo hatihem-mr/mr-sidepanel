@@ -1,0 +1,39 @@
+{
+  "name": "muck-rack-support-assistant",
+  "version": "2.2.0",
+  "description": "Chrome extension to assist support teams with Muck Rack searches and customer interactions",
+  "scripts": {
+    "dev": "node esbuild.config.js --dev",
+    "build": "node esbuild.config.js",
+    "test": "jest",
+    "lint": "eslint src --ext .ts",
+    "clean": "rimraf dist",
+    "fetch-samples": "tsx dev-tools/fetch-sample-conversations.ts",
+    "fetch-coverage-samples": "tsx dev-tools/fetch-coverage-report-samples.ts",
+    "fetch-intercom-csv": "tsx dev-tools/fetch-intercom-csv.ts"
+  },
+  "dependencies": {
+    "@material/web": "^2.4.1",
+    "lit": "^3.1.0",
+    "papaparse": "^5.4.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.254",
+    "@types/node": "^20.10.0",
+    "@types/papaparse": "^5.3.14",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@typescript-eslint/eslint-plugin": "^6.13.1",
+    "@typescript-eslint/parser": "^6.13.1",
+    "dotenv": "^17.2.3",
+    "esbuild": "^0.25.5",
+    "eslint": "^8.54.0",
+    "jest": "^29.7.0",
+    "rimraf": "^5.0.5",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.2"
+  },
+  "type": "module"
+}

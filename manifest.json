@@ -1,0 +1,70 @@
+{
+  "manifest_version": 3,
+  "name": "Muck Rack Support Assistant",
+  "version": "2.5.0",
+  "description": "Assist support teams with Muck Rack searches, customer interactions, and bulk operations.",
+  
+  "permissions": [
+    "sidePanel",
+    "contextMenus",
+    "scripting",
+    "activeTab",
+    "tabs",
+    "storage",
+    "clipboardWrite",
+    "cookies",
+    "notifications"
+  ],
+  
+  "host_permissions": [
+    "https://app.muckrack.com/*",
+    "https://admin.muckrack.com/*",
+    "https://muckrack.com/*",
+    "https://*.muckrack.com/*",
+    "https://api.openai.com/*",
+    "https://api.anthropic.com/*",
+    "https://docs.google.com/spreadsheets/*",
+    "https://widget.intercom.io/*",
+    "https://api.intercom.io/*",
+    "https://app.intercom.com/*",
+    "https://*.intercom.com/*"
+  ],
+  
+  "background": {
+    "service_worker": "service-worker.js",
+    "type": "module"
+  },
+  
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  
+  "action": {
+    "default_title": "Open Muck Rack Support Assistant"
+  },
+  
+  "content_scripts": [
+    {
+      "matches": [
+        "https://widget.intercom.io/*",
+        "https://app.intercom.com/*",
+        "https://*.intercom.com/*",
+        "https://www.google.com/*",
+        "https://google.com/*",
+        "https://app.muckrack.com/*",
+        "https://*.muckrack.com/*"
+      ],
+      "js": ["content-script.js"],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ],
+  
+  "icons": {
+    "128": "icon-128.png"
+  },
+  
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; connect-src 'self' https://api.openai.com https://api.anthropic.com https://muckrack.com https://*.muckrack.com https://*.intercom.com https://*.intercom.io https://docs.google.com; font-src 'self' https://fonts.gstatic.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; default-src 'self';"
+  }
+}

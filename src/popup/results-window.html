@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulk Search Results</title>
+    <link rel="stylesheet" href="results-window.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="title" id="resultTitle">Bulk Search Results</h1>
+            <input type="text" class="search-box" placeholder="Search results..." id="searchInput">
+            <div class="tip">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: text-bottom; margin-right: 4px;">
+                    <path d="M12 2v2m0 16v2m8-10h2M2 12h2m13.66-5.66l1.41-1.41M4.93 19.07l1.41-1.41m12.73 0l1.41 1.41M4.93 4.93l1.41 1.41M9 12a3 3 0 1 0 6 0 3 3 0 0 0-6 0z"/>
+                </svg>
+                <strong>Tip:</strong> You can Ctrl+click (or Cmd+click on Mac) each link to open them in new tabs, or use the "Open All" button in the extension popup!
+            </div>
+        </div>
+        
+        <div class="summary" id="resultSummary">
+            <!-- Summary will be populated by JavaScript -->
+        </div>
+        
+        <div class="results-list" id="resultsList">
+            <!-- Results will be populated by JavaScript -->
+        </div>
+    </div>
+    
+    <script type="module" src="results-window.js"></script>
+</body>
+</html>

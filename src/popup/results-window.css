@@ -1,0 +1,272 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #1e293b;
+    color: #e2e8f0;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 100%;
+    padding: 24px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #3b82f6;
+    margin-bottom: 16px;
+}
+
+.search-box {
+    width: 100%;
+    padding: 12px 16px;
+    background: #334155;
+    border: 1px solid #475569;
+    border-radius: 8px;
+    color: #e2e8f0;
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+.search-box::placeholder {
+    color: #94a3b8;
+}
+
+.search-box:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.tip {
+    background: #1e40af;
+    color: #bfdbfe;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    margin-bottom: 24px;
+}
+
+.summary {
+    display: flex;
+    gap: 16px;
+    background: #334155;
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    align-items: center;
+}
+
+.summary-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.summary-total { color: #e2e8f0; }
+.summary-found { color: #10b981; }
+.summary-empty { color: #ef4444; }
+
+.copy-button {
+    background: #f59e0b;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-left: auto;
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.copy-button:hover {
+    background: #d97706;
+}
+
+.copy-button:disabled {
+    background: #6b7280;
+    cursor: not-allowed;
+}
+
+.results-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.result-item {
+    background: #334155;
+    border: 1px solid #475569;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.2s;
+}
+
+.result-item.hidden {
+    display: none;
+}
+
+.result-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    cursor: pointer;
+}
+
+.result-header:hover {
+    background: #3f4c63;
+}
+
+.result-name {
+    font-size: 16px;
+    font-weight: 500;
+    color: #3b82f6;
+    cursor: pointer;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.result-name:hover {
+    color: #60a5fa;
+    text-decoration: underline;
+}
+
+.result-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.status-indicator {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.status-found {
+    background: #10b981;
+    color: white;
+}
+
+.status-empty {
+    background: #ef4444;
+    color: white;
+}
+
+.open-link-btn,
+.expand-btn {
+    width: 32px;
+    height: 32px;
+    background: #3b82f6;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    font-size: 16px;
+}
+
+.open-link-btn:hover,
+.expand-btn:hover {
+    background: #2563eb;
+}
+
+.open-link-btn {
+    background: #10b981;
+}
+
+.open-link-btn:hover {
+    background: #059669;
+}
+
+.result-details {
+    padding: 0 16px 16px;
+    border-top: 1px solid #475569;
+    background: #2d3748;
+    display: none;
+}
+
+.result-details.expanded {
+    display: block;
+}
+
+.detail-row {
+    margin: 12px 0;
+}
+
+.detail-label {
+    font-size: 12px;
+    color: #94a3b8;
+    margin-bottom: 4px;
+}
+
+.detail-value {
+    font-size: 14px;
+    color: #e2e8f0;
+    background: #1e293b;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-family: 'Monaco', 'Menlo', monospace;
+}
+
+.detail-url {
+    color: #3b82f6;
+    cursor: pointer;
+    word-break: break-all;
+    transition: color 0.2s;
+}
+
+.detail-url:hover {
+    color: #60a5fa;
+    text-decoration: underline;
+}
+
+/* NEW: Styling for first result display */
+.primary-name {
+    font-weight: 600;
+    color: #e2e8f0;
+}
+
+.context-info {
+    font-weight: 400;
+    color: #94a3b8;
+    font-size: 13px;
+    margin-left: 4px;
+}
+
+.result-main-info {
+    margin-bottom: 4px;
+}
+
+.result-description {
+    font-size: 12px;
+    color: #94a3b8;
+    line-height: 1.4;
+    margin-top: 4px;
+    font-style: italic;
+}
